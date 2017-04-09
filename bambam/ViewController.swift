@@ -1,19 +1,19 @@
-//
-//  ViewController.swift
-//  bambam
-//
-//  Created by Sota Hatakeyama on 2017/04/09.
-//  Copyright © 2017 Sota Hatakeyama. All rights reserved.
-//
-
 import Cocoa
+import MASShortcut
+
+let kPreferenceGlobalShortcut = "GlobalShortcut"
 
 class ViewController: NSViewController {
 
+  @IBOutlet weak var shortcutView: MASShortcutView!
+
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
+    shortcutView.associatedUserDefaultsKey = kPreferenceGlobalShortcut
+    MASShortcutBinder.shared()
+      .bindShortcut(withDefaultsKey: kPreferenceGlobalShortcut) {
+        bam(image: #imageLiteral(resourceName: "bam"))
+    }
   }
 
   override var representedObject: Any? {
@@ -21,7 +21,5 @@ class ViewController: NSViewController {
     // Update the view, if already loaded.
     }
   }
-
-
 }
 
