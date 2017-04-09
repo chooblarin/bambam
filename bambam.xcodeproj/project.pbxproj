@@ -11,6 +11,7 @@
 		FADDBFAD1E9A6FDB006CA36C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADDBFAC1E9A6FDB006CA36C /* ViewController.swift */; };
 		FADDBFAF1E9A6FDB006CA36C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FADDBFAE1E9A6FDB006CA36C /* Assets.xcassets */; };
 		FADDBFB21E9A6FDB006CA36C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADDBFB01E9A6FDB006CA36C /* Main.storyboard */; };
+		FADDBFBB1E9A7682006CA36C /* MASShortcut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADDBFBA1E9A7682006CA36C /* MASShortcut.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		FADDBFAE1E9A6FDB006CA36C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FADDBFB11E9A6FDB006CA36C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FADDBFB31E9A6FDB006CA36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADDBFBA1E9A7682006CA36C /* MASShortcut.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MASShortcut.framework; path = Carthage/Build/Mac/MASShortcut.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADDBFBB1E9A7682006CA36C /* MASShortcut.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 			children = (
 				FADDBFA91E9A6FDB006CA36C /* bambam */,
 				FADDBFA81E9A6FDB006CA36C /* Products */,
+				FADDBFB91E9A7682006CA36C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +65,14 @@
 			path = bambam;
 			sourceTree = "<group>";
 		};
+		FADDBFB91E9A7682006CA36C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FADDBFBA1E9A7682006CA36C /* MASShortcut.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +83,7 @@
 				FADDBFA31E9A6FDB006CA36C /* Sources */,
 				FADDBFA41E9A6FDB006CA36C /* Frameworks */,
 				FADDBFA51E9A6FDB006CA36C /* Resources */,
+				FADDBFBC1E9A768D006CA36C /* Carthage copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,6 +140,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FADDBFBC1E9A768D006CA36C /* Carthage copy frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/MASShortcut.framework",
+			);
+			name = "Carthage copy frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FADDBFA31E9A6FDB006CA36C /* Sources */ = {
@@ -250,6 +281,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = H6T775QPW5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = bambam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sotahatakeyama.bambam;
@@ -264,6 +299,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = H6T775QPW5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = bambam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sotahatakeyama.bambam;
